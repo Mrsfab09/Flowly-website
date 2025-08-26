@@ -1,4 +1,4 @@
----
+<!-- ---
 title: 'Markdown + Tailwind'
 layout: ../layouts/main.astro
 ---
@@ -13,4 +13,4 @@ layout: ../layouts/main.astro
  >
   Go home
  </a>
-</div>
+</div> -->
