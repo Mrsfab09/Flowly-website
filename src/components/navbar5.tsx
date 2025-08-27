@@ -64,12 +64,8 @@ const Navbar5 = () => {
     <section className="bg-background/90 fixed top-0 left-0 z-50 flex w-full justify-center px-3 backdrop-blur-md">
       <div className="container py-4">
         <nav className="flex items-center justify-between">
-          <a href="https://www.shadcnblocks.com" className="flex items-center gap-4">
-            <img
-              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg"
-              className="max-h-8"
-              alt="Shadcn UI Navbar"
-            />
+          <a href="/" className="flex items-center gap-4">
+            <img src="/flowly-logo.svg" className="max-h-8" alt="Shadcn UI Navbar" />
             <span className="text-xl font-semibold tracking-wide">Flowly</span>
           </a>
           <NavigationMenu className="ml-30 hidden lg:block">
