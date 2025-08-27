@@ -1,4 +1,4 @@
-import { Infinity as InfinityIcon, MessagesSquare, Zap, ZoomIn } from "lucide-react";
+import { UserPlus, LayoutDashboard, Users, TrendingUp } from "lucide-react";
 
 const feature = [
   {
@@ -6,28 +6,28 @@ const feature = [
     title: "Sign up in seconds",
     description:
       "Create your Flowly account in just a few clicks. No lengthy forms or complex setup—get started immediately and dive into your projects.",
-    icon: <ZoomIn className="size-6" />,
+    icon: <UserPlus className="size-6" />,
   },
   {
     image: "/workspace.svg",
     title: "Set up your workspace",
     description:
       "Invite your team, organize projects, and customize your workflow to match your unique needs. Everything you need in one centralized workspace.",
-    icon: <Zap className="size-6" />,
+    icon: <LayoutDashboard className="size-6" />,
   },
   {
     image: "/collaboration.svg",
     title: "Collaborate & track",
     description:
       "Share files, manage tasks, and monitor progress seamlessly. Keep everyone on the same page and make collaboration effortless across your team.",
-    icon: <MessagesSquare className="size-6" />,
+    icon: <Users className="size-6" />,
   },
   {
     image: "/scale.svg",
     title: "Scale effortlessly",
     description:
       "Flowly grows with your team. From small startups to large enterprises, enjoy a platform that adapts to your evolving needs without the growing pains.",
-    icon: <InfinityIcon className="size-6" />,
+    icon: <TrendingUp className="size-6" />,
   },
 ];
 
