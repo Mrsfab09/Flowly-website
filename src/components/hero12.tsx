@@ -1,8 +1,6 @@
 import { ExternalLink } from "lucide-react";
 
-import { cn } from "@/lib/utils";
-
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 
 const Hero12 = () => {
   return (
@@ -20,12 +18,8 @@ const Hero12 = () => {
       <div className="relative z-10 container">
         <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
           {/* Logo */}
-          <div className="bg-background/30 rounded-xl p-4 shadow-sm backdrop-blur-sm">
-            <img
-              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-1.svg"
-              alt="logo"
-              className="h-14 sm:h-16"
-            />
+          <div className="bg-background/30 rounded-xl p-6 shadow-sm backdrop-blur-sm">
+            <img src="/flowly-logo.svg" alt="logo" className="h-14 sm:h-12" />
           </div>
 
           {/* Nagłówek */}
