@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+import { Zap, ChartPie, Settings2, Blocks, Database, MessageCircle } from "lucide-react";
+
+const features = await getCollection("features");
+const rendered = await Promise.all(features.map((f) => f.render()));
+
+const icons = {
+  zap: Zap,
+  "chart-pie": ChartPie,
+  settings: Settings2,
+  blocks: Blocks,
+  database: Database,
+  "message-circle": MessageCircle,
+};
+---
+
+<section id="features" class="w-full px-6 py-12 xs:py-20">
+  <h2 class="text-center text-3xl font-bold tracking-tight xs:text-4xl sm:text-5xl">
+    Why Choose Flowly?
+  </h2>
+  <div class="mx-auto mt-10 grid w-full max-w-screen-lg gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
+    {rendered.map((feature) => {
+      const Icon = icons[feature.entry.data.icon];
+      const Content = feature.Content;
+      return (
+        <div class="bg-background flex flex-col rounded-xl border px-5 py-6">
+          <div class="bg-muted mb-3 flex h-10 w-10 items-center justify-center rounded-full">
+            <Icon class="h-6 w-6" />
+          </div>
+          <span class="text-lg font-semibold">{feature.entry.data.title}</span>
+          <div class="text-foreground/80 mt-1 text-[15px]">
+            <Content />
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</section>
