@@ -1,15 +1,15 @@
 ---
 import '../styles/global.css';
 
-import { Footer7 }from '@/components/footer7'
-import { Feature15 } from '@/components/feature15';
-import { Community2 } from '@/components/community2';
-import Features  from '@/components/features'
-import Faq  from '@/components/faq'
+import Footer7 from '@/components/Footer.astro'
+import Features  from '@/components/Features.astro'
+import Faq  from '@/components/Faq.astro'
 
 import Hero from '@/components/Hero.astro'
 import Header from "../components/Header.astro"
-import Pricing from '@/components/pricing';
+import HowItWorks from '@/components/HowItWorks.astro';
+import Pricing from '@/components/Pricing.astro';
+import Community from '@/components/Community.astro';
 ---
 
 <html lang="en">
@@ -25,9 +25,9 @@ import Pricing from '@/components/pricing';
 		<main class="grid place-items-center content-center">
 			<Hero />
 			<Features />
-			<Feature15 />
+			<HowItWorks />
 			<Pricing />
-			<Community2 />
+			<Community />
 			<Faq />
 		</main>
 		<Footer7 />
