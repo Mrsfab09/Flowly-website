@@ -1,0 +1,105 @@
+---
+import {
+  FaDiscord,
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
+
+const logo = {
+  url: "/",
+  src: "./flowly-logo.svg",
+  alt: "logo",
+  title: "Flowly",
+};
+
+const description = "A collection of components for your startup business or side project.";
+
+const socialLinks = [
+  { icon: FaTwitter, href: "#", label: "Twitter" },
+  { icon: FaLinkedin, href: "#", label: "LinkedIn" },
+  { icon: FaGithub, href: "https://github.com/Mrsfab09", label: "Github" },
+  { icon: FaDiscord, href: "#", label: "Discord" },
+];
+
+const sections = [
+  {
+    title: "Features",
+    links: [
+      { name: "Dashboard", href: "#" },
+      { name: "Settings", href: "#" },
+      { name: "Storage", href: "#" },
+      { name: "Analytics", href: "#" },
+      { name: "Integrations", href: "#" },
+      { name: "Support", href: "#" },
+    ],
+  },
+  { title: "Product", links: [{ name: "Overview", href: "#" }] },
+  { title: "Resources", links: [{ name: "Overview", href: "#" }] },
+  { title: "Contact", links: [{ name: "Overview", href: "#" }] },
+];
+
+const legalLinks = [
+  { name: "Terms and Conditions", href: "#" },
+  { name: "Privacy Policy", href: "#" },
+];
+
+const copyright = "© 2025 docs-flowly.netlify.app. All rights reserved.";
+---
+
+<section class="flex justify-center px-4 sm:px-6 lg:px-8">
+  <div class="container">
+    <div class="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
+      <!-- Logo & Description & Social Links -->
+      <div class="flex w-full flex-col items-center justify-between gap-6 text-center lg:items-start lg:text-left">
+        <div class="flex items-center gap-2 lg:justify-start">
+          <a href={logo.url}>
+            <img src={logo.src} alt={logo.alt} title={logo.title} class="h-8" />
+          </a>
+          <h2 class="text-xl font-semibold">{logo.title}</h2>
+        </div>
+        <p class="text-muted-foreground max-w-lg text-sm">{description}</p>
+        <ul class="text-muted-foreground flex items-center justify-center space-x-6 lg:justify-start">
+          {socialLinks.map((social) => {
+            const Icon = social.icon;
+            return (
+              <li class="hover:text-primary font-medium">
+                <a href={social.href} aria-label={social.label}>
+                  <Icon className="size-5" />
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      <!-- Sections -->
+      <div class="grid w-full gap-6 sm:grid-cols-2 md:grid-cols-4 lg:gap-20">
+        {sections.map((section) => (
+          <div class="text-center sm:text-left">
+            <h3 class="mb-4 font-bold">{section.title}</h3>
+            <ul class="text-muted-foreground space-y-3 text-sm">
+              {section.links.map((link) => (
+                <li class="hover:text-primary font-medium">
+                  <a href={link.href}>{link.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Footer Legal -->
+    <div class="text-muted-foreground mt-8 flex flex-col items-center justify-between gap-4 border-t py-8 text-xs font-medium md:flex-row md:items-center md:text-left">
+      <p class="order-2 text-center md:order-1 md:text-left">{copyright}</p>
+      <ul class="order-1 flex flex-col gap-2 text-center md:order-2 md:flex-row md:gap-6">
+        {legalLinks.map((link) => (
+          <li class="hover:text-primary">
+            <a href={link.href}>{link.name}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
