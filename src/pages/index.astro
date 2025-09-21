@@ -15,14 +15,14 @@ import Community from '@/components/Community.astro';
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/flowly-logo.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Flowly – Task & Project Management</title>
 	</head>
 	<body>
 		<Header />
-		<main class="grid place-items-center content-center">
+		<main class="flex flex-col items-center">
 			<Hero />
 			<Features />
 			<HowItWorks />

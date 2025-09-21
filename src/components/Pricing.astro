@@ -53,45 +53,51 @@ const plans = [
 
 ---
 <section class="py-10">
-<div class="flex min-h-screen flex-col items-center justify-center">
-      <h1 class="text-center text-5xl font-bold">Pricing</h1>
-      <div class="mx-auto mt-12 grid max-w-(--breakpoint-lg) grid-cols-1 items-center gap-10 sm:mt-16 lg:grid-cols-3 lg:gap-0">
-        {plans.map((plan) => (
-          <div
-            class={cn(
-              "relative rounded-xl border p-7 lg:rounded-none lg:first:rounded-l-xl lg:last:rounded-r-xl",
-              {
-                "rounded-xl! border-2 border-amber-600 py-12": plan.isPopular,
-              }
-            )}
+  <div class="flex flex-col items-center justify-center">
+    <h1 class="text-center text-4xl sm:text-5xl font-bold">Pricing</h1>
+
+    <div class="mt-12 grid w-full max-w-7xl grid-cols-1 gap-8 sm:grid-cols-1 lg:grid-cols-3 lg:gap-6 px-4">
+      {plans.map((plan) => (
+        <div
+          class={cn(
+            "relative rounded-xl border p-6 sm:p-7 flex flex-col justify-between",
+            {
+              "border-2 border-amber-600 py-10": plan.isPopular,
+            }
+          )}
+        >
+          {plan.isPopular && (
+            <Badge className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-600">
+              Most Popular
+            </Badge>
+          )}
+
+          <h3 class="text-lg font-medium text-center">{plan.name}</h3>
+          <p class="mt-2 text-3xl sm:text-4xl font-bold text-center">${plan.price}</p>
+          <p class="text-muted-foreground mt-4 font-medium text-center">{plan.description}</p>
+
+          <Separator className="my-6" />
+
+          <ul class="space-y-2">
+            {plan.features.map((feature) => (
+              <li class="flex items-start gap-2">
+                <CircleCheck className="mt-1 h-4 w-4 text-amber-600" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+
+          <Button
+            variant={plan.isPopular ? "default" : "outline"}
+            size="lg"
+            className={`mt-6 w-full ${plan.isPopular ? "bg-amber-600 hover:bg-neutral-700" : ""}`}
           >
-            {plan.isPopular && (
-              <Badge className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-amber-600">
-                Most Popular
-              </Badge>
-            )}
-            <h3 class="text-lg font-medium">{plan.name}</h3>
-            <p class="mt-2 text-4xl font-bold">${plan.price}</p>
-            <p class="text-muted-foreground mt-4 font-medium">{plan.description}</p>
-            <Separator className="my-6" />
-            <ul class="space-y-2">
-              {plan.features.map((feature) => (
-                <li class="flex items-start gap-2">
-                  <CircleCheck className="mt-1 h-4 w-4 text-amber-600" />
-                  {feature}
-                </li>
-              ))}
-            </ul>
-            <Button
-              variant={plan.isPopular ? "default" : "outline"}
-              size="lg"
-              className={`mt-6 w-full ${plan.isPopular ? "bg-amber-600 hover:bg-neutral-700" : ""}`}
-            >
-              {plan.buttonText}
-            </Button>
-          </div>
-        ))}
-      </div>
+            {plan.buttonText}
+          </Button>
+        </div>
+      ))}
     </div>
+  </div>
 </section>
+
     

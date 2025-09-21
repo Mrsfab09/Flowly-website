@@ -40,44 +40,45 @@ const features = [
 ];
 ---
 
-<section class="py-32">
-  <div class="container">
+<section class="py-16 md:py-32">
+  <div class="max-w-7xl mx-auto px-4">
     <div class="flex w-full flex-col items-center">
-      <div class="flex flex-col items-center space-y-4 text-center sm:space-y-6 md:max-w-3xl md:text-center">
+      <div class="flex flex-col items-center space-y-4 text-center sm:space-y-6 md:max-w-3xl">
         <p class="text-muted-foreground text-sm uppercase">How It Works</p>
         <h2 class="text-3xl font-bold md:text-5xl">Simplicity at Every Step</h2>
-
-        <p class="text-muted-foreground md:max-w-2xl">
+        <p class="text-muted-foreground mt-2 md:max-w-2xl">
           Get started in minutes — Flowly makes it easy to set up, collaborate, and scale
           without the usual complexity.
         </p>
       </div>
     </div>
 
-<div class="mx-auto mt-20 grid max-w-5xl gap-6 md:grid-cols-2">
-  {features.map((feature) => {
-    const Icon = feature.icon;
-    return (
-      <div class="bg-accent flex flex-col justify-between rounded-lg p-6 md:min-h-[300px] md:p-8">
-        <span class="bg-background flex size-11 items-center justify-center rounded-full">
-          <Icon className="size-6" />
-        </span>
+    <div class="mx-auto mt-20 grid max-w-5xl gap-6 md:grid-cols-2">
+      {features.map((feature) => {
+        const Icon = feature.icon;
+        return (
+          <div class="bg-accent flex flex-col justify-between rounded-lg p-6 sm:p-8">
+            <span class="bg-background flex size-11 items-center justify-center rounded-full mb-4 sm:mb-6">
+              <Icon className="h-6 w-6" />
+            </span>
 
-        <Image
-          src={feature.image}
-          alt={feature.title}
-          widths={[200, 400, 800]}
-          sizes="(max-width: 600px) 100vw, 600px"
-          loading="lazy"
-        />
+            <Image
+              src={feature.image}
+              alt={feature.title}
+              widths={[200, 400, 800]}
+              sizes="(max-width: 600px) 100vw, 600px"
+              class="mb-4 sm:mb-6"
+              loading="lazy"
+            />
 
-        <div>
-          <h3 class="text-lg font-medium md:text-2xl">{feature.title}</h3>
-          <p class="text-muted-foreground mt-2">{feature.description}</p>
-        </div>
-      </div>
-    );
-  })}
-</div>
+            <div class="text-center">
+              <h3 class="text-lg font-medium md:text-xl">{feature.title}</h3>
+              <p class="text-muted-foreground mt-2 text-sm md:text-base">{feature.description}</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
   </div>
 </section>
+
