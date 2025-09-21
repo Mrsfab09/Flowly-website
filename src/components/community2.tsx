@@ -1,9 +1,9 @@
-import { ArrowUpRight } from "lucide-react";
-import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { ArrowUpRight, Twitter, Linkedin, Github } from "lucide-react";
+import { RiDiscordLine } from "react-icons/ri";
 
 const Community2 = () => {
   return (
-    <section className="py-32">
+    <section className="px-52 py-32">
       <div className="container px-32">
         <h2 className="mb-5 text-2xl font-semibold md:text-3xl">Join our community</h2>
         <p className="text-muted-foreground font-medium md:text-xl">
@@ -12,7 +12,7 @@ const Community2 = () => {
         <div className="mt-10 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
           <a className="group border-border rounded-md border p-6" href="#">
             <div className="flex items-center justify-between gap-4">
-              <FaXTwitter className="size-5" />
+              <Twitter />
               <ArrowUpRight className="size-4 -translate-x-2 translate-y-2 opacity-0 transition-all group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
             </div>
             <div className="mt-4">
@@ -24,7 +24,7 @@ const Community2 = () => {
           </a>
           <a className="group border-border rounded-md border p-6" href="#">
             <div className="flex items-center justify-between gap-4">
-              <FaLinkedin className="size-5" />
+              <Linkedin />
               <ArrowUpRight className="size-4 -translate-x-2 translate-y-2 opacity-0 transition-all group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
             </div>
             <div className="mt-4">
@@ -34,9 +34,12 @@ const Community2 = () => {
               </p>
             </div>
           </a>
-          <a className="group border-border rounded-md border p-6" href="#">
+          <a
+            className="group border-border rounded-md border p-6"
+            href="https://github.com/Mrsfab09"
+          >
             <div className="flex items-center justify-between gap-4">
-              <FaGithub className="size-5" />
+              <Github />
               <ArrowUpRight className="size-4 -translate-x-2 translate-y-2 opacity-0 transition-all group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
             </div>
             <div className="mt-4">
@@ -48,7 +51,7 @@ const Community2 = () => {
           </a>
           <a className="group border-border rounded-md border p-6" href="#">
             <div className="flex items-center justify-between gap-4">
-              <FaDiscord className="size-5" />
+              <RiDiscordLine size={25} />
               <ArrowUpRight className="size-4 -translate-x-2 translate-y-2 opacity-0 transition-all group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
             </div>
             <div className="mt-4">
