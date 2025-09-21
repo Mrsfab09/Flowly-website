@@ -1,4 +1,13 @@
-import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {
+  FaDiscord,
+  FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
+import { Twitter, Linkedin, Github } from "lucide-react";
+import { RiDiscordLine } from "react-icons/ri";
 
 interface Footer7Props {
   logo?: {
@@ -51,10 +60,10 @@ const defaultSections = [
 ];
 
 const defaultSocialLinks = [
-  { icon: <FaInstagram className="size-5" />, href: "#", label: "Instagram" },
-  { icon: <FaFacebook className="size-5" />, href: "#", label: "Facebook" },
-  { icon: <FaGithub className="size-5" />, href: "https://github.com/Mrsfab09", label: "Twitter" },
+  { icon: <FaTwitter className="size-5" />, href: "#", label: "Facebook" },
   { icon: <FaLinkedin className="size-5" />, href: "#", label: "LinkedIn" },
+  { icon: <FaGithub className="size-5" />, href: "https://github.com/Mrsfab09", label: "Twitter" },
+  { icon: <FaDiscord className="size-5" />, href: "#", label: "Instagram" },
 ];
 
 const defaultLegalLinks = [
@@ -64,8 +73,8 @@ const defaultLegalLinks = [
 
 const Footer7 = ({
   logo = {
-    url: "https://www.shadcnblocks.com",
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg",
+    url: "/",
+    src: "./flowly-logo.svg",
     alt: "logo",
     title: "Flowly",
   },
