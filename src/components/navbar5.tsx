@@ -122,12 +122,8 @@ const Navbar5 = () => {
             <SheetContent side="top" className="max-h-screen overflow-auto">
               <SheetHeader>
                 <SheetTitle>
-                  <a href="https://www.shadcnblocks.com" className="flex items-center gap-2">
-                    <img
-                      src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg"
-                      className="max-h-8"
-                      alt="Shadcn UI Navbar"
-                    />
+                  <a href="/" className="flex items-center gap-2">
+                    <img src="./flowly-logo.svg" className="max-h-6" alt="Flwoly logo" />
                     <span className="text-xl font-semibold tracking-wide">Flowly</span>
                   </a>
                 </SheetTitle>
