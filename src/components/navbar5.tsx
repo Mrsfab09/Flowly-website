@@ -26,37 +26,37 @@ const Navbar5 = () => {
       icon: ChartNoAxesCombined,
       title: "Dashboard",
       description: "Overview of your activity",
-      href: "#",
+      href: "/",
     },
     {
       icon: ChartNoAxesCombined,
       title: "Analytics",
       description: "Track your performance",
-      href: "#",
+      href: "/",
     },
     {
       icon: ChartNoAxesCombined,
       title: "Settings",
       description: "Configure your preferences",
-      href: "#",
+      href: "/",
     },
     {
       icon: ChartNoAxesCombined,
       title: "Integrations",
       description: "Connect with other tools",
-      href: "#",
+      href: "/",
     },
     {
       icon: ChartNoAxesCombined,
       title: "Storage",
       description: "Manage your files",
-      href: "#",
+      href: "/",
     },
     {
       icon: ChartNoAxesCombined,
       title: "Support",
       description: "Get help when needed",
-      href: "#",
+      href: "/",
     },
   ];
 
@@ -80,7 +80,7 @@ const Navbar5 = () => {
                         key={index}
                         className="hover:bg-muted/70 rounded-md p-3 transition-colors"
                       >
-                        <div key={feature.title}>
+                        <div>
                           <p className="text-foreground mb-1 flex gap-2 font-semibold">
                             <feature.icon className="h-20 w-20" />
                             {feature.title}
@@ -93,17 +93,17 @@ const Navbar5 = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="#" className={navigationMenuTriggerStyle()}>
+                <NavigationMenuLink href="/" className={navigationMenuTriggerStyle()}>
                   Products
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="#" className={navigationMenuTriggerStyle()}>
+                <NavigationMenuLink href="/" className={navigationMenuTriggerStyle()}>
                   Resources
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="#" className={navigationMenuTriggerStyle()}>
+                <NavigationMenuLink href="/" className={navigationMenuTriggerStyle()}>
                   Contact
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -139,10 +139,9 @@ const Navbar5 = () => {
                         {features.map((feature, index) => (
                           <a
                             href={feature.href}
-                            key={index}
                             className="hover:bg-muted/70 rounded-md p-3 transition-colors"
                           >
-                            <div key={feature.title}>
+                            <div>
                               <p className="text-foreground mb-1 font-semibold">{feature.title}</p>
                               <p className="text-muted-foreground text-sm">{feature.description}</p>
                             </div>
@@ -153,13 +152,13 @@ const Navbar5 = () => {
                   </AccordionItem>
                 </Accordion>
                 <div className="flex flex-col gap-6">
-                  <a href="#" className="font-medium">
+                  <a href="/" className="font-medium">
                     Templates
                   </a>
-                  <a href="#" className="font-medium">
+                  <a href="/" className="font-medium">
                     Blog
                   </a>
-                  <a href="#" className="font-medium">
+                  <a href="/" className="font-medium">
                     Pricing
                   </a>
                 </div>
