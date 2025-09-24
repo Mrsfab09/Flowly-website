@@ -1,66 +1,73 @@
 ---
-import { BadgeDollarSign, Route, ShieldCheck, Truck, Undo2, UserRoundCheck } from "lucide-react";
+import { Link, RefreshCw, Users, CreditCard, Shield, Headset } from "lucide-react";
 
 const faq = [
   {
-    icon: Undo2,
-    question: "What is your return policy?",
+    icon: Link,
+    question: "Does Flowly integrate with other tools?",
     answer:
-      "You can return unused items in their original packaging within 30 days for a refund or exchange. Contact support for assistance.",
+      "Yes, Flowly works with popular apps like Google Calendar, Slack, and Notion. This means you always have all your tasks and notifications in one place.",
   },
   {
-    icon: Route,
-    question: "How do I track my order?",
+    icon: RefreshCw,
+    question: "Can I automate repetitive tasks?",
     answer:
-      "Track your order using the link provided in your confirmation email, or log into your account to view tracking details.",
+      "Flowly lets you create templates and automatic reminders for recurring tasks, which saves time and makes work easier to organize.",
   },
   {
-    icon: Truck,
-    question: "Do you ship internationally?",
+    icon: Users,
+    question: "Can I share tasks with others?",
     answer:
-      "Yes, we ship worldwide. Shipping fees and delivery times vary by location, and customs duties may apply for some countries.",
+      "Of course! Flowly lets you invite colleagues and share projects, making it easy to work as a team.",
   },
   {
-    icon: BadgeDollarSign,
-    question: "What payment methods do you accept?",
+    icon: CreditCard,
+    question: "Is Flowly free?",
     answer:
-      "We accept Visa, MasterCard, American Express, PayPal, Apple Pay, and Google Pay, ensuring secure payment options for all customers.",
+      "Flowly offers a free plan with basic features. Premium plans are available for teams and more advanced organizations.",
   },
   {
-    icon: ShieldCheck,
-    question: "What if I receive a damaged item?",
+    icon: Shield,
+    question: "Is my data safe?",
     answer:
-      "Please contact our support team within 48 hours of delivery with photos of the damaged item. We’ll arrange a replacement or refund.",
+      "Yes, all data in Flowly is encrypted and stored securely. We care about your privacy and work security.",
   },
   {
-    icon: UserRoundCheck,
-    question: "How can I contact customer support?",
+    icon: Headset,
+    question: "How can I contact technical support?",
     answer:
-      "Reach out via email at support@example.com or call us at 1-800-123-4567 for assistance with any inquiries.",
+      "Our support team is available via the app (live chat) or by email at support@flowly.com.",
   },
 ];
 ---
-    <div id="faq" class="xs:py-20 flex min-h-screen items-center justify-center px-6 py-12">
-      <div class="max-w-screen-lg">
-        <h2 class="xs:text-4xl text-center text-3xl !leading-[1.15] font-bold tracking-tight md:text-5xl">
-          Frequently Asked Questions
-        </h2>
-        <p class="xs:text-lg text-muted-foreground mt-3 text-center">
-          Quick answers to common questions about our products and services.
-        </p>
 
-        <div class="bg-background outline-border mt-12 grid overflow-hidden rounded-xl outline-[1px] outline-offset-[-1px] md:grid-cols-2">
-          {faq.map(({ question, answer, icon: Icon }) => (
-            <div class="-mt-px -ml-px border p-6">
-              <div class="xs:h-10 xs:w-10 bg-accent flex h-8 w-8 items-center justify-center rounded-full">
-                <Icon className="xs:h-6 xs:w-6 h-4 w-4" />
-              </div>
-              <div class="xs:text-[1.35rem] mt-3 mb-2 flex items-start gap-2 text-lg font-semibold tracking-tight">
-                <span>{question}</span>
-              </div>
-              <p class="xs:text-base text-sm">{answer}</p>
+<div id="faq" class="xs:py-20 flex min-h-screen items-center justify-center px-6 py-12">
+  <div class="max-w-screen-lg">
+    <h2
+      class="xs:text-4xl text-center text-3xl !leading-[1.15] font-bold tracking-tight md:text-5xl"
+    >
+      Frequently Asked Questions
+    </h2>
+    <p class="xs:text-lg text-muted-foreground mt-3 text-center">
+      Quick answers to common questions about our products and services.
+    </p>
+
+    <div
+      class="bg-background outline-border mt-12 grid overflow-hidden rounded-xl outline-[1px] outline-offset-[-1px] md:grid-cols-2"
+    >
+      {
+        faq.map(({ question, answer, icon: Icon }) => (
+          <div class="-mt-px -ml-px border p-6">
+            <div class="xs:h-10 xs:w-10 bg-accent flex h-8 w-8 items-center justify-center rounded-full">
+              <Icon className="xs:h-6 xs:w-6 h-4 w-4" />
             </div>
-          ))}
-        </div>
-      </div>
+            <div class="xs:text-[1.35rem] mt-3 mb-2 flex items-start gap-2 text-lg font-semibold tracking-tight">
+              <span>{question}</span>
+            </div>
+            <p class="xs:text-base text-sm">{answer}</p>
+          </div>
+        ))
+      }
     </div>
+  </div>
+</div>
