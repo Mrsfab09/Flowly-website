@@ -9,7 +9,8 @@ const plans = [
   {
     name: "Free",
     price: 0,
-    description: "Perfect for individuals or small teams to get started with basic project management.",
+    description:
+      "Perfect for individuals or small teams to get started with basic project management.",
     features: [
       "Up to 2 active projects",
       "Basic Kanban boards",
@@ -36,7 +37,8 @@ const plans = [
   {
     name: "Premium",
     price: 49,
-    description: "For larger teams or enterprises requiring full project management, analytics, and collaboration.",
+    description:
+      "For larger teams or enterprises requiring full project management, analytics, and collaboration.",
     features: [
       "Unlimited projects",
       "Advanced Kanban, timeline & calendar views",
@@ -48,56 +50,53 @@ const plans = [
     isPopular: true,
   },
 ];
-
-
-
 ---
-<section class="py-10">
+
+<section class="py-20" id="pricing">
   <div class="flex flex-col items-center justify-center">
-    <h1 class="text-center text-4xl sm:text-5xl font-bold">Pricing</h1>
+    <h1 class="text-center text-4xl font-bold sm:text-5xl">Pricing</h1>
 
-    <div class="mt-12 grid w-full max-w-7xl grid-cols-1 gap-8 sm:grid-cols-1 lg:grid-cols-3 lg:gap-6 px-4">
-      {plans.map((plan) => (
-        <div
-          class={cn(
-            "relative rounded-xl border p-6 sm:p-7 flex flex-col justify-between",
-            {
+    <div
+      class="mt-12 grid w-full max-w-7xl grid-cols-1 gap-8 px-4 sm:grid-cols-1 lg:grid-cols-3 lg:gap-6"
+    >
+      {
+        plans.map((plan) => (
+          <div
+            class={cn("relative flex flex-col justify-between rounded-xl border p-6 sm:p-7", {
               "border-2 border-amber-600 py-10": plan.isPopular,
-            }
-          )}
-        >
-          {plan.isPopular && (
-            <Badge className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-600">
-              Most Popular
-            </Badge>
-          )}
-
-          <h3 class="text-lg font-medium text-center">{plan.name}</h3>
-          <p class="mt-2 text-3xl sm:text-4xl font-bold text-center">${plan.price}</p>
-          <p class="text-muted-foreground mt-4 font-medium text-center">{plan.description}</p>
-
-          <Separator className="my-6" />
-
-          <ul class="space-y-2">
-            {plan.features.map((feature) => (
-              <li class="flex items-start gap-2">
-                <CircleCheck className="mt-1 h-4 w-4 text-amber-600" />
-                {feature}
-              </li>
-            ))}
-          </ul>
-
-          <Button
-            variant={plan.isPopular ? "default" : "outline"}
-            size="lg"
-            className={`mt-6 w-full ${plan.isPopular ? "bg-amber-600 hover:bg-neutral-700" : ""}`}
+            })}
           >
-            {plan.buttonText}
-          </Button>
-        </div>
-      ))}
+            {plan.isPopular && (
+              <Badge className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-600">
+                Most Popular
+              </Badge>
+            )}
+
+            <h3 class="text-center text-lg font-medium">{plan.name}</h3>
+            <p class="mt-2 text-center text-3xl font-bold sm:text-4xl">${plan.price}</p>
+            <p class="text-muted-foreground mt-4 text-center font-medium">{plan.description}</p>
+
+            <Separator className="my-6" />
+
+            <ul class="space-y-2">
+              {plan.features.map((feature) => (
+                <li class="flex items-start gap-2">
+                  <CircleCheck className="mt-1 h-4 w-4 text-amber-600" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+
+            <Button
+              variant={plan.isPopular ? "default" : "outline"}
+              size="lg"
+              className={`mt-6 w-full ${plan.isPopular ? "bg-amber-600 hover:bg-neutral-700" : ""}`}
+            >
+              {plan.buttonText}
+            </Button>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
-
-    
