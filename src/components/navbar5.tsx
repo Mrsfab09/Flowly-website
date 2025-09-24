@@ -21,41 +21,23 @@ import {
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 const Navbar5 = () => {
-  const features = [
+  const resources = [
     {
       icon: ChartNoAxesCombined,
-      title: "Dashboard",
+      title: "Blog",
       description: "Overview of your activity",
       href: "/",
     },
     {
       icon: ChartNoAxesCombined,
-      title: "Analytics",
+      title: "Guides",
       description: "Track your performance",
       href: "/",
     },
     {
       icon: ChartNoAxesCombined,
-      title: "Settings",
+      title: "Changelog",
       description: "Configure your preferences",
-      href: "/",
-    },
-    {
-      icon: ChartNoAxesCombined,
-      title: "Integrations",
-      description: "Connect with other tools",
-      href: "/",
-    },
-    {
-      icon: ChartNoAxesCombined,
-      title: "Storage",
-      description: "Manage your files",
-      href: "/",
-    },
-    {
-      icon: ChartNoAxesCombined,
-      title: "Support",
-      description: "Get help when needed",
       href: "/",
     },
   ];
@@ -71,21 +53,36 @@ const Navbar5 = () => {
           <NavigationMenu className="ml-30 hidden lg:block">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Features</NavigationMenuTrigger>
+                <NavigationMenuLink href="#features" className={navigationMenuTriggerStyle()}>
+                  Features
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink href="/" className={navigationMenuTriggerStyle()}>
+                  Templates
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink href="#pricing" className={navigationMenuTriggerStyle()}>
+                  Pricing
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid w-[600px] grid-cols-2 p-3">
-                    {features.map((feature, index) => (
+                  <div className="flex w-[300px] flex-col p-3">
+                    {resources.map((resources, index) => (
                       <NavigationMenuLink
-                        href={feature.href}
+                        href={resources.href}
                         key={index}
                         className="hover:bg-muted/70 rounded-md p-3 transition-colors"
                       >
                         <div>
                           <p className="text-foreground mb-1 flex gap-2 font-semibold">
-                            <feature.icon className="h-20 w-20" />
-                            {feature.title}
+                            <resources.icon className="h-20 w-20" />
+                            {resources.title}
                           </p>
-                          <p className="text-muted-foreground text-sm">{feature.description}</p>
+                          <p className="text-muted-foreground text-sm">{resources.description}</p>
                         </div>
                       </NavigationMenuLink>
                     ))}
@@ -93,13 +90,8 @@ const Navbar5 = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/" className={navigationMenuTriggerStyle()}>
-                  Products
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink href="/" className={navigationMenuTriggerStyle()}>
-                  Resources
+                <NavigationMenuLink href="#community" className={navigationMenuTriggerStyle()}>
+                  Community
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -136,7 +128,7 @@ const Navbar5 = () => {
                     </AccordionTrigger>
                     <AccordionContent>
                       <div className="grid md:grid-cols-2">
-                        {features.map((feature, index) => (
+                        {resources.map((feature, index) => (
                           <a
                             href={feature.href}
                             className="hover:bg-muted/70 rounded-md p-3 transition-colors"
