@@ -1,6 +1,6 @@
 "use client";
 
-import { MenuIcon, ChartNoAxesCombined } from "lucide-react";
+import { MenuIcon, BookOpen, Compass, History } from "lucide-react";
 
 import {
   Accordion,
@@ -23,19 +23,19 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 const Navbar5 = () => {
   const resources = [
     {
-      icon: ChartNoAxesCombined,
+      icon: BookOpen,
       title: "Blog",
       description: "Overview of your activity",
       href: "/",
     },
     {
-      icon: ChartNoAxesCombined,
+      icon: Compass,
       title: "Guides",
       description: "Track your performance",
       href: "/",
     },
     {
-      icon: ChartNoAxesCombined,
+      icon: History,
       title: "Changelog",
       description: "Configure your preferences",
       href: "/",
@@ -70,20 +70,18 @@ const Navbar5 = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="flex w-[300px] flex-col p-3">
+                  <div className="flex min-w-[240px] flex-col justify-center p-3">
                     {resources.map((resources, index) => (
                       <NavigationMenuLink
                         href={resources.href}
                         key={index}
                         className="hover:bg-muted/70 rounded-md p-3 transition-colors"
                       >
-                        <div>
-                          <p className="text-foreground mb-1 flex gap-2 font-semibold">
-                            <resources.icon className="h-20 w-20" />
-                            {resources.title}
-                          </p>
-                          <p className="text-muted-foreground text-sm">{resources.description}</p>
-                        </div>
+                        <p className="text-foreground mb-1 flex items-center gap-2 font-semibold">
+                          <resources.icon className="h-20 w-20" />
+                          {resources.title}
+                        </p>
+                        <p className="text-muted-foreground text-sm">{resources.description}</p>
                       </NavigationMenuLink>
                     ))}
                   </div>
@@ -124,18 +122,20 @@ const Navbar5 = () => {
                 <Accordion type="single" collapsible className="mt-4 mb-2">
                   <AccordionItem value="solutions" className="border-none">
                     <AccordionTrigger className="text-base hover:no-underline">
-                      Features
+                      Resources
                     </AccordionTrigger>
                     <AccordionContent>
                       <div className="grid md:grid-cols-2">
-                        {resources.map((feature, index) => (
+                        {resources.map((resource) => (
                           <a
-                            href={feature.href}
+                            href={resource.href}
                             className="hover:bg-muted/70 rounded-md p-3 transition-colors"
                           >
                             <div>
-                              <p className="text-foreground mb-1 font-semibold">{feature.title}</p>
-                              <p className="text-muted-foreground text-sm">{feature.description}</p>
+                              <p className="text-foreground mb-1 font-semibold">{resource.title}</p>
+                              <p className="text-muted-foreground text-sm">
+                                {resource.description}
+                              </p>
                             </div>
                           </a>
                         ))}
@@ -145,13 +145,19 @@ const Navbar5 = () => {
                 </Accordion>
                 <div className="flex flex-col gap-6">
                   <a href="/" className="font-medium">
+                    Features
+                  </a>
+                  <a href="/" className="font-medium">
                     Templates
                   </a>
                   <a href="/" className="font-medium">
-                    Blog
+                    Pricing
                   </a>
                   <a href="/" className="font-medium">
-                    Pricing
+                    Community
+                  </a>
+                  <a href="/" className="font-medium">
+                    Contact
                   </a>
                 </div>
                 <div className="mt-6 flex flex-col gap-4">
